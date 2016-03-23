@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext">
+  <soap:Body>
+    <BpsReportResponseEx xmlns="http://webservices.seisint.com/WsAccurintPeople">
+      <response>
+        <Individual/>
+        <Header>
+          <TransactionId>83451190R138</TransactionId>
+          <Status>0</Status>
+        </Header>
+      </response>
+    </BpsReportResponseEx>
+  </soap:Body>
+</soap:Envelope>
