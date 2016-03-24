@@ -10,9 +10,9 @@ require 'rspec/collection_matchers'
 require 'paynet_api' # and any other gems you need
 require 'hashie' # and any other gems you need
 require 'rspec/its'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
 end
-

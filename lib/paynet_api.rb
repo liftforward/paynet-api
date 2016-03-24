@@ -10,4 +10,7 @@ require File.dirname(__FILE__) + "/paynet_api/echo_test/request"
 require File.dirname(__FILE__) + "/paynet_api/echo_test/response"
 require File.dirname(__FILE__) + "/paynet_api/bps_report/request"
 require File.dirname(__FILE__) + "/paynet_api/bps_report/response"
-
+require File.dirname(__FILE__) + "/paynet_api/get_payment_history_report/request"
+require File.dirname(__FILE__) + "/paynet_api/get_payment_history_report/response"
+require File.dirname(__FILE__) + "/paynet_api/search_for_company/request"
+require File.dirname(__FILE__) + "/paynet_api/search_for_company/response"
