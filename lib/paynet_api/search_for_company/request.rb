@@ -14,9 +14,6 @@ module PaynetApi
         @phone = phone
       end
 
-      def wsdl
-        "#{base_url}/search_for_company"
-      end
 
       def send!
         conn = Faraday.new(:url => ENV["BASE_URL"]) do |faraday|
