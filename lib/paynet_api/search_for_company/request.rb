@@ -33,7 +33,6 @@ module PaynetApi
           req.params['company_name'] = company_name
           req.params['city'] = city
           req.params['state_code'] = state_code
-
           req.params['phone'] = phone if phone
           req.params['name_match_threshold'] = name_match_threshold if name_match_threshold
         end

@@ -10,11 +10,10 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'equivalent-xml'
   gem 'rspec'
-  gem 'rspec-its'
   gem 'dotenv'
   gem 'pry'
   gem 'webmock'
-  gem 'faraday'
+  gem 'faraday', '0.9.2'
   gem 'rspec-its'
 end
 

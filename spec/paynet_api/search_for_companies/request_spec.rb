@@ -1,7 +1,19 @@
 require 'pry'
 
 describe PaynetApi::SearchForCompany::Request do
-  subject { PaynetApi::SearchForCompany::Request.new(company_name: "Acme Co", city: "Durham", state_code: "NC") }
+  let(:request) { 
+    PaynetApi::SearchForCompany::Request.new(company_name: "Acme Co", city: "Durham", state_code: "NC") 
+  }
+
+  let(:request_with_options) { 
+    PaynetApi::SearchForCompany::Request.new(company_name: "Acme Co", city: "Durham", state_code: "NC", name_match_threshold: "80", phone: "2122234454")
+  }
+
+  let(:request_with_missing_arguments) { 
+    PaynetApi::SearchForCompany::Request.new()
+  }
+   
+  subject { request }
   # its(:builder) { is_expected.to be_a(Builder::XmlMarkup) }
   # its(:options) { is_expected.to be_a(String) }
 
@@ -12,7 +24,7 @@ describe PaynetApi::SearchForCompany::Request do
       its (:state_code){ should eq("NC") }
 
       context "with optional arguments" do
-        subject { PaynetApi::SearchForCompany::Request.new(company_name: "Acme Co", city: "Durham", state_code: "NC", name_match_threshold: "80", phone: "2122234454") }
+        subject { request_with_options }
         its (:name_match_threshold){ should eq("80") }
         its (:phone){ should eq("2122234454") }
       end
@@ -26,7 +38,7 @@ describe PaynetApi::SearchForCompany::Request do
 
     context "without required params passed in" do
       it "raises an argument error" do
-        expect{ PaynetApi::SearchForCompany::Request.new() }.to raise_error(ArgumentError, "missing keywords: company_name, city, state_code")
+        expect{ request_with_missing_arguments }.to raise_error(ArgumentError, "missing keywords: company_name, city, state_code")
       end
     end
 
@@ -41,15 +53,38 @@ describe PaynetApi::SearchForCompany::Request do
   end
 
   describe '#send' do
-    it "sends a GET request to Paynet with the correct URL" do
-      stub_request(:get, "#{ENV["BASE_URL"]}search_for_company.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}").
-               with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.1'}).
-               to_return(:status => 200, :body => "", :headers => {})
-      # WebMock.allow_net_connect!
-      response = subject.send!
-      # binding.pry
-      expect(response.success?).to be true
+    let(:url) { 
+      "#{ENV["BASE_URL"]}search_for_company.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}"
+    }
+
+    let(:url_options) {
+      "&phone=#{subject.phone}&name_match_threshold=#{subject.name_match_threshold}"
+    }
+
+    context 'with required arguments' do 
+      it "sends a GET request to Paynet with the correct URL" do
+        stub_request(:get, url)
+        .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.2'}).to_return(:status => 200, :body => "", :headers => {})
+        # WebMock.allow_net_connect!
+        response = subject.send!
+        # binding.pry
+        expect(response.success?).to be true
+      end
     end
+
+    context 'with optional arguments' do 
+      subject { request_with_options }
+      it "sends a GET request to Paynet with the correct URL" do
+        stub_request(:get, "#{url}#{url_options}")
+        .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.2'}).to_return(:status => 200, :body => "", :headers => {})
+        # WebMock.allow_net_connect!
+        response = subject.send!
+        # binding.pry
+        expect(response.success?).to be true
+      end
+
+    end
+
   end
 
 end
