@@ -15,6 +15,7 @@ group :development, :test do
   gem 'webmock'
   gem 'faraday', '0.9.2'
   gem 'rspec-its'
+  gem 'vcr'
 end
 
 # gem 'httpi', git: 'https://github.com/savonrb/httpi.git', ref: 'a56015b'

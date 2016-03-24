@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://secure.paynetonline.com/search_for_company.asp?city=Durham&company_name=Acme%20Co&name_match_threshold=80&password=Che6eqas!&phone=2122234454&state_code=NC&user=paynet_direct_test@liftforward.com&version=0320
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/xml; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 24 Mar 2016 21:26:41 GMT
+      Content-Length:
+      - '4363'
+    body:
+      encoding: UTF-8
+      string: <response error_code="0" version="0320"><companies><company><paynet_id>64753318</paynet_id><name><![CDATA[JULIA
+        GRAY, LTD]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[979
+        3RD AVE STE 711 ]]></street><city><![CDATA[NEW YORK]]></city><state_code>NY</state_code><postal_code>10022-1234</postal_code><country_code>USA</country_code><telephone>2122234454</telephone><match_score>88</match_score></company><company><paynet_id>84170380</paynet_id><name><![CDATA[ACME
+        DOOR]]></name><aliases><alias><![CDATA[ACME OVERHEAD DOORS, INC]]></alias></aliases><tax_id></tax_id><street><![CDATA[433
+        W MAIN ST ]]></street><city><![CDATA[DURHAM]]></city><state_code>NC</state_code><postal_code>27701-3217</postal_code><country_code>USA</country_code><additional_addresses><address><street><![CDATA[PO
+        BOX 11394 ]]></street><city><![CDATA[DURHAM]]></city><state>NC</state><postal_code>27703-0394</postal_code><country_code>USA</country_code></address><address><street><![CDATA[904
+        INDIANA AVE ]]></street><city><![CDATA[DURHAM]]></city><state>NC</state><postal_code>27703-4463</postal_code><country_code>USA</country_code></address></additional_addresses><telephone>9195988898</telephone><additional_phones><phone>9195987600</phone></additional_phones><match_score>87</match_score></company><company><paynet_id>92304243</paynet_id><name><![CDATA[ACME
+        WELL CO INC]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[7990
+        NC HIGHWAY 751 ]]></street><city><![CDATA[DURHAM]]></city><state_code>NC</state_code><postal_code>27713-6852</postal_code><country_code>USA</country_code><telephone>9199541940</telephone><additional_phones><phone>9195441940</phone></additional_phones><match_score>87</match_score></company><company><paynet_id>117197291</paynet_id><name><![CDATA[ACME]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[502
+        N BROAD ST ]]></street><city><![CDATA[WINSTON SALEM]]></city><state_code>NC</state_code><postal_code>27101-2510</postal_code><country_code>USA</country_code><telephone></telephone><additional_phones><phone>3367241526</phone></additional_phones><match_score>85</match_score></company><company><paynet_id>201424995</paynet_id><name><![CDATA[ACME]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[5202
+        CAROLINA BEACH RD STE 1 ]]></street><city><![CDATA[WILMINGTON]]></city><state_code>NC</state_code><postal_code>28412-2535</postal_code><country_code>USA</country_code><telephone></telephone><match_score>85</match_score></company><company><paynet_id>115529306</paynet_id><name><![CDATA[ACME
+        INCORPORATED]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[7804
+        KINGSBROOK CT ]]></street><city><![CDATA[WAKE FOREST]]></city><state_code>NC</state_code><postal_code>27587-5837</postal_code><country_code>USA</country_code><telephone></telephone><match_score>85</match_score></company><company><paynet_id>115510651</paynet_id><name><![CDATA[ACME
+        LIQUIDATION CO]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[513
+        DEAUVILLE RD ]]></street><city><![CDATA[STATESVILLE]]></city><state_code>NC</state_code><postal_code>28625-4619</postal_code><country_code>USA</country_code><telephone></telephone><additional_phones><phone>7048786644</phone></additional_phones><match_score>85</match_score></company><company><paynet_id>124218069</paynet_id><name><![CDATA[ACME
+        OVERHEAD DOORS INC]]></name><aliases></aliases><tax_id></tax_id><street><![CDATA[PO
+        BOX 1135 ]]></street><city><![CDATA[DURHAM]]></city><state_code>NC</state_code><postal_code>27702-1135</postal_code><country_code>USA</country_code><telephone>9195962207</telephone><match_score>84</match_score></company><company><paynet_id>60723439</paynet_id><name><![CDATA[ACME
+        PLUMBING & HEATING COMPANY OF DURHAM, INC]]></name><aliases><alias><![CDATA[BILL
+        DRUMMOND]]></alias></aliases><tax_id></tax_id><street><![CDATA[PO BOX 2288
+        ]]></street><city><![CDATA[DURHAM]]></city><state_code>NC</state_code><postal_code>27702</postal_code><country_code>USA</country_code><additional_addresses><address><street><![CDATA[636
+        FOSTER ST ]]></street><city><![CDATA[DURHAM]]></city><state>NC</state><postal_code>27701</postal_code><country_code>USA</country_code></address></additional_addresses><telephone>9196881349</telephone><additional_phones><phone>9196881348</phone></additional_phones><match_score>82</match_score></company></companies></response>
+    http_version: 
+  recorded_at: Thu, 24 Mar 2016 21:26:43 GMT
+recorded_with: VCR 3.0.1

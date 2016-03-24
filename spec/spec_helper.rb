@@ -11,6 +11,13 @@ require 'paynet_api' # and any other gems you need
 require 'hashie' # and any other gems you need
 require 'rspec/its'
 require 'webmock/rspec'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock # or :fakeweb
+  c.configure_rspec_metadata!
+end
 
 RSpec.configure do |config|
   config.filter_run :focus

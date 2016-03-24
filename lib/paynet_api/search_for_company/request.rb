@@ -14,25 +14,41 @@ module PaynetApi
         @phone = phone
       end
 
+      def url
+        base_url = "#{ENV["BASE_URL"]}search_for_company.asp"
+        params = { user: ENV["BASIC_AUTH_USER"],
+                  password: ENV["BASIC_AUTH_PASSWORD"],
+                  version: '0320',
+                  company_name: company_name,
+                  city: city,
+                  state_code: state_code,
+                  phone: phone,
+                  name_match_threshold: name_match_threshold}.sort.to_h.reduce(''){|m, (k,v)| v.nil? ? m : m + "#{k}=#{v}&"}.chop
+
+                  alphabetize_by_key(hash)
+                  to_query(hash)
+
+        "#{base_url}?#{params}"
+      end
 
       def send!
-        conn = Faraday.new(:url => ENV["BASE_URL"]) do |faraday|
+        conn = Faraday.new(:url => url) do |faraday|
           faraday.request  :url_encoded             # form-encode POST params
           # faraday.response :logger                  # log requests to STDOUT
           faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
         end
 
-        response = conn.get do |req|                           # GET http://sushi.com/search?page=2&limit=100
-          req.url 'search_for_company.asp'
-          req.params['user'] = ENV["BASIC_AUTH_USER"]
-          req.params['password'] = ENV["BASIC_AUTH_PASSWORD"]
-          req.params['version'] = '0320'
-          req.params['company_name'] = company_name
-          req.params['city'] = city
-          req.params['state_code'] = state_code
-          req.params['phone'] = phone if phone
-          req.params['name_match_threshold'] = name_match_threshold if name_match_threshold
-        end
+        # response = conn.get do |req|                           # GET http://sushi.com/search?page=2&limit=100
+        #   req.url 'search_for_company.asp'
+        #   req.params['user'] = ENV["BASIC_AUTH_USER"]
+        #   req.params['password'] = ENV["BASIC_AUTH_PASSWORD"]
+        #   req.params['version'] = '0320'
+        #   req.params['company_name'] = company_name
+        #   req.params['city'] = city
+        #   req.params['state_code'] = state_code
+        #   req.params['phone'] = phone if phone
+        #   req.params['name_match_threshold'] = name_match_threshold if name_match_threshold
+        # end
 
 # binding.pry
 # https://secure.paynetonline.com/search_for_company.asp?user=paynet_direct_test@liftforward.com&password=Che6eqas!&version=0320&company_name=Veto%E2%80%99s+tattoo&City=Nokomis&state_code=TN&phone=5039620554&name_match_threshold=80
