@@ -10,7 +10,6 @@ require 'rspec/collection_matchers'
 require 'paynet_api' # and any other gems you need
 require 'hashie' # and any other gems you need
 require 'rspec/its'
-require 'webmock/rspec'
 require 'vcr'
 
 VCR.configure do |c|

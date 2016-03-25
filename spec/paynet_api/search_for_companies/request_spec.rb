@@ -34,36 +34,39 @@ describe PaynetApi::SearchForCompany::Request do
   end
 
   describe "#url" do
-    let(:url) { "#{ENV["BASE_URL"]}search_for_company.asp?city=#{subject.city}&company_name=#{subject.company_name}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320" }
+    let(:url) { URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?city=#{subject.city}&company_name=#{subject.company_name}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
 
     context "with required arguments" do
-      it "creates the correct url with params for Paynet" do
+      it "creates the correct encoded url with params for Paynet" do
         expect(subject.url).to eq(url)
       end
     end
 
     context "with optional arguments" do
-      let(:url_with_options) { "#{ENV["BASE_URL"]}search_for_company.asp?city=#{subject.city}&company_name=#{subject.company_name}&name_match_threshold=#{subject.name_match_threshold}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&phone=#{subject.phone}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320" }
+      let(:url_with_options) { URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?city=#{subject.city}&company_name=#{subject.company_name}&name_match_threshold=#{subject.name_match_threshold}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&phone=#{subject.phone}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
       subject { request_with_options }
 
-      it "creates the correct url with params for Paynet" do
+      it "creates the correct encoded url with params for Paynet" do
         expect(subject.url).to eq(url_with_options)
       end
     end
   end
 
   describe "#send!" do
-    let(:url){ "#{ENV["BASE_URL"]}search_for_company.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}" }
+    let(:url){ URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}") }
 
     it "sends Faraday the url" do
-      expect(Faraday).to receive(:new).with(url: subject.url)
+      expect(Faraday).to receive(:get).with(subject.url)
       subject.send!
     end
 
     it "Successfully connects to Paynet" do
-      response = subject.send!
-      expect(response.success?).to be true
-      expect(response.body).not_to be nil
+      WebMock.allow_net_connect!
+      VCR.turned_off do
+        response = subject.send!
+        expect(response.success?).to be true
+        expect(response.body).not_to be nil
+      end
     end
   end
 

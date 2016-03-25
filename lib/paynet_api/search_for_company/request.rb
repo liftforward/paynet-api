@@ -16,107 +16,71 @@ module PaynetApi
 
       def url
         base_url = "#{ENV["BASE_URL"]}search_for_company.asp"
-        params = { user: ENV["BASIC_AUTH_USER"],
+        params = to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
                   password: ENV["BASIC_AUTH_PASSWORD"],
                   version: '0320',
                   company_name: company_name,
                   city: city,
                   state_code: state_code,
                   phone: phone,
-                  name_match_threshold: name_match_threshold}.sort.to_h.reduce(''){|m, (k,v)| v.nil? ? m : m + "#{k}=#{v}&"}.chop
+                  name_match_threshold: name_match_threshold})
 
-                  alphabetize_by_key(hash)
-                  to_query(hash)
-
-        "#{base_url}?#{params}"
+        URI.encode("#{base_url}?#{params}")
       end
 
       def send!
-        conn = Faraday.new(:url => url) do |faraday|
-          faraday.request  :url_encoded             # form-encode POST params
-          # faraday.response :logger                  # log requests to STDOUT
-          faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-        end
+        Faraday.get(url)
+      end
 
-        # response = conn.get do |req|                           # GET http://sushi.com/search?page=2&limit=100
-        #   req.url 'search_for_company.asp'
-        #   req.params['user'] = ENV["BASIC_AUTH_USER"]
-        #   req.params['password'] = ENV["BASIC_AUTH_PASSWORD"]
-        #   req.params['version'] = '0320'
-        #   req.params['company_name'] = company_name
-        #   req.params['city'] = city
-        #   req.params['state_code'] = state_code
-        #   req.params['phone'] = phone if phone
-        #   req.params['name_match_threshold'] = name_match_threshold if name_match_threshold
-        # end
+      private
 
-# binding.pry
-# https://secure.paynetonline.com/search_for_company.asp?user=paynet_direct_test@liftforward.com&password=Che6eqas!&version=0320&company_name=Veto%E2%80%99s+tattoo&City=Nokomis&state_code=TN&phone=5039620554&name_match_threshold=80
-#
-# https://secure.paynetonline.com/search_for_company.asp?
-# user=paynet_direct_test@liftforward.com
-# password=Che6eqas!
-# version=0320
-# company_name=Veto%E2%80%99s+tattoo
-# City=Nokomis
-# state_code=TN
-# phone=5039620554
-# name_match_threshold=80
-#
-# {
-#   user: ENV["BASIC_AUTH_USER"],
-#   password: ENV["BASIC_AUTH_PASSWORD"],
-#   version: 0320
-#   company_name: Veto%E2%80%99s+tattoo
-#   city: Nokomis
-#   state_code: TN
-#   phone: 5039620554
-#   name_match_threshold: 80
-# }
-#
-# https://secure.paynetonline.com/search_for_company?city=Durham&company_name=Acme+Co&state_code=NC
-#
-#
-#
-#
-#
-#
-# https://secure.paynetonline.com/get_payment_history_report.asp?user=paynet_direct_test@liftforward.com&password=Che6eqas!&version=0320&paynet_id=59206906&user_field=INVOI CE123&payment_comprehensive=1&business_background=1&public_filings=1&uc c_filings=1&legal_name=1&master_score=1
-#
-# https://secure.paynetonline.com/get_payment_history_report.asp?
-# user=paynet_direct_test@liftforward.com
-# password=Che6eqas!
-# version=0320
-# paynet_id=59206906
-# user_field=INVOI CE123
-# payment_comprehensive=1
-# business_background=1
-# public_filings=1
-# ucc_filings=1&legal_name=1&master_score=1
-#
-#
-# {
-#   user: ENV["BASIC_AUTH_USER"],
-#   password ENV["BASIC_AUTH_PASSWORD"],
-#   version: 0320,
-#   paynet_id
-#   user_field
-#   format
-#   payment_comprehensive
-#   business_background
-#   public_filings
-#   ucc_filings
-#   legal_name
-#   transpo_score
-#   ￼office_score
-#   constr_score
-#   master_score
-#   action
-#   expanded_vars
-# }
+      def alphabetize_by_key(hash)
+        hash.sort.to_h
+      end
 
+      def to_query(hash)
+        hash.reduce(''){|m, (k,v)| v.nil? ? m : m + "#{k}=#{v}&"}.chop
+      end
 
+      def to_alphabetized_query(hash)
+        to_query( alphabetize_by_key(hash) )
       end
     end
   end
 end
+
+        # https://secure.paynetonline.com/search_for_company.asp?user=paynet_direct_test@liftforward.com&password=Che6eqas!&version=0320&company_name=Veto%E2%80%99s+tattoo&City=Nokomis&state_code=TN&phone=5039620554&name_match_threshold=80
+        # https://secure.paynetonline.com/search_for_company?city=Durham&company_name=Acme+Co&state_code=NC
+
+        # https://secure.paynetonline.com/get_payment_history_report.asp?user=paynet_direct_test@liftforward.com&password=Che6eqas!&version=0320&paynet_id=59206906&user_field=INVOI CE123&payment_comprehensive=1&business_background=1&public_filings=1&uc c_filings=1&legal_name=1&master_score=1
+        # https://secure.paynetonline.com/get_payment_history_report.asp?
+        # user=paynet_direct_test@liftforward.com
+        # password=Che6eqas!
+        # version=0320
+        # paynet_id=59206906
+        # user_field=INVOI CE123
+        # payment_comprehensive=1
+        # business_background=1
+        # public_filings=1
+        # ucc_filings=1&legal_name=1&master_score=1
+        #
+        #
+        # {
+        #   user: ENV["BASIC_AUTH_USER"],
+        #   password ENV["BASIC_AUTH_PASSWORD"],
+        #   version: 0320,
+        #   paynet_id
+        #   user_field
+        #   format
+        #   payment_comprehensive
+        #   business_background
+        #   public_filings
+        #   ucc_filings
+        #   legal_name
+        #   transpo_score
+        #   ￼office_score
+        #   constr_score
+        #   master_score
+        #   action
+        #   expanded_vars
+        # }
