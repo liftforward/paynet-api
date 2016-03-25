@@ -67,5 +67,4 @@ describe PaynetApi::SearchForCompany::Request do
       expect(response.body).not_to be nil
     end
   end
-
 end

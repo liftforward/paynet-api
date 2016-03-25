@@ -91,5 +91,4 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
       expect(response.body).not_to be nil
     end
   end
-
 end
