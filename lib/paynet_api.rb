@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'savon'
 
 require File.dirname(__FILE__) + "/paynet_api/version"
 require File.dirname(__FILE__) + "/paynet_api/config"

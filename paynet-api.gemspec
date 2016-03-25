@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Drew Nichols"]
   spec.email         = ["drew@liftforward.com"]
 
-  spec.summary       = "Client Gem for the Leis Nexis Accurint Api"
-  spec.description   = "Client Gem for the Leis Nexis Accurint Api"
+  spec.summary       = "Client Gem for the Paynet Api"
+  spec.description   = "Client Gem for the Paynet Api"
   spec.homepage      = "https://github.com/liftforward/paynet-api"
   spec.license       = "MIT"
 
@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   # spec.add_development_dependency "bundler", "~> 1.7"
   # spec.add_development_dependency "rspec", "~> 3.2"
 
-  spec.add_dependency 'savon', '~> 2.10'
   spec.add_dependency 'builder', '~> 3.1'
   spec.add_dependency 'hashie', '~> 3.4.1'
   spec.add_dependency 'httpi'
