@@ -60,7 +60,7 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
   end
 
   describe "#url" do
-    let(:url) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?city=#{subject.city}&company_name=#{subject.company_name}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
+    let(:url) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?password=#{ENV["BASIC_AUTH_PASSWORD"]}&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
 
     context "with required arguments" do
       it "creates the correct encoded url with params for Paynet" do
@@ -69,7 +69,7 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
     end
 
     context "with optional arguments" do
-      let(:url_with_options) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?city=#{subject.city}&company_name=#{subject.company_name}&name_match_threshold=#{subject.name_match_threshold}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&phone=#{subject.phone}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
+      let(:url_with_options) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?business_background=#{subject.business_background}&constr_score=#{subject.constr_score}&expanded_vars=#{subject.expanded_vars}&legal_name=#{subject.legal_name}&master_score=#{subject.master_score}&office_score=#{subject.office_score}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=#{subject.payment_comprehensive}&paynet_id=#{subject.paynet_id}&public_filings=#{subject.public_filings}&transpo_score=#{subject.transpo_score}&ucc_filings=#{subject.ucc_filings}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
       subject { request_with_options }
 
       it "creates the correct encoded url with params for Paynet" do
@@ -79,8 +79,6 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
   end
 
   describe "#send!" do
-    let(:url){ URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}") }
-
     it "sends Faraday the url" do
       expect(Faraday).to receive(:get).with(subject.url)
       subject.send!
@@ -88,11 +86,9 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
 
     it "Successfully connects to Paynet" do
       WebMock.allow_net_connect!
-      VCR.turned_off do
-        response = subject.send!
-        expect(response.success?).to be true
-        expect(response.body).not_to be nil
-      end
+      response = subject.send!
+      expect(response.success?).to be true
+      expect(response.body).not_to be nil
     end
   end
 

@@ -21,15 +21,21 @@ module PaynetApi
       end
 
       def url
-        base_url = "#{ENV["BASE_URL"]}search_for_company.asp"
+        base_url = "#{ENV["BASE_URL"]}get_payment_history_report.asp"
         params = to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
                   password: ENV["BASIC_AUTH_PASSWORD"],
                   version: '0320',
-                  company_name: company_name,
-                  city: city,
-                  state_code: state_code,
-                  phone: phone,
-                  name_match_threshold: name_match_threshold})
+                  paynet_id: paynet_id,
+                  payment_comprehensive: payment_comprehensive,
+                  business_background: business_background,
+                  public_filings: public_filings,
+                  ucc_filings: ucc_filings,
+                  legal_name: legal_name,
+                  transpo_score: transpo_score,
+                  office_score: office_score,
+                  constr_score: constr_score,
+                  master_score: master_score,
+                  expanded_vars: expanded_vars})
 
         URI.encode("#{base_url}?#{params}")
       end
