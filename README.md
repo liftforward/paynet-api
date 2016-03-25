@@ -19,7 +19,7 @@ $ bundle install
 Or install it yourself as:
 
 ```
-$ gem install paynete-api
+$ gem install paynet-api
 ```
 
 ## Usage
@@ -40,18 +40,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ### Running the integration suite
 
-To run the integration suite you will need credentials from Paynet and your source IP white listed by them. Often a commercial proxy service such as [QuotaGuard])(https://www.quotaguard.com) can make it easier as their IP are already whitelisted.
-
-Once you have your credentials set them in the following environment variables:
+To run the integration suite you will need credentials from Paynet. Once you have your credentials set them in the following environment variables:
 ```
-BASIC_AUTH_USER={your paynet api user name}
-BASIC_AUTH_PASSWORD={your paynet api password}
-BASE_URL={base url for api. Everything before the '/WsAccurint...'}
-
-//optional
-PROXY_URL={URL to proxy server if you are using one}
+BASIC_AUTH_USER={ your paynet api user name }
+BASIC_AUTH_PASSWORD={ your paynet api password }
+BASE_URL={ base url for api. Everything before the endpoints }
 ```
-
 
 ## Contributing
 
