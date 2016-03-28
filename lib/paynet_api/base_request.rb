@@ -1,13 +1,19 @@
+require 'faraday_middleware'
+
 module PaynetApi
   class BaseRequest
 
     def base_url
-      # PaynetApi::Config.base_url
       "#{ENV["BASE_URL"]}#{self.class::ENDPOINT}"
     end
 
     def send!
-      Faraday.get(url)
+      connection = Faraday.new url do |conn|
+        conn.response :xml,  :content_type => /\bxml$/
+        conn.adapter Faraday.default_adapter
+      end
+
+      xml_response = connection.get
     end
 
     private

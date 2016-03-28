@@ -13,6 +13,8 @@ group :development, :test do
   gem 'pry'
   gem 'webmock'
   gem 'faraday', '0.9.2'
+  gem 'faraday_middleware'
+  gem 'multi_xml'
   gem 'rspec-its'
   gem 'vcr'
 end
