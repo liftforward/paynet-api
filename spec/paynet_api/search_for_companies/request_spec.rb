@@ -65,8 +65,6 @@ describe PaynetApi::SearchForCompany::Request do
     it "Successfully connects to Paynet" do
       WebMock.allow_net_connect!
       response = subject.send!
-      binding.pry
-
       expect(response.success?).to be true
       expect(response.body).not_to be nil
     end
