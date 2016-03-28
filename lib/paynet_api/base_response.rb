@@ -19,13 +19,5 @@ module PaynetApi
     def version
       @body["response"]["version"] if @body && @body["response"] && @body["response"]["version"]
     end
-
-    def companies
-      @body["response"]["companies"]["company"] if companies_jsonable
-    end
-
-    def companies_jsonable
-      @body && @body["response"] && @body["response"]["companies"] && @body["response"]["companies"]["company"]
-    end
   end
 end
