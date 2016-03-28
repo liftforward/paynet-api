@@ -54,15 +54,19 @@ describe PaynetApi::SearchForCompany::Request do
 
   describe "#send!" do
     let(:url){ URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?user=#{ENV["BASIC_AUTH_USER"]}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&version=0320&company_name=#{subject.company_name}&city=#{subject.city}&state_code=#{subject.state_code}") }
+    let(:faraday_connection_double) { instance_double(Faraday::Connection, :get => "faraday response")}
 
     it "sends Faraday the url" do
-      expect(Faraday).to receive(:get).with(subject.url)
+      expect(Faraday).to receive(:new).with(subject.url).and_return(faraday_connection_double)
+      expect(faraday_connection_double).to receive(:get)
       subject.send!
     end
 
     it "Successfully connects to Paynet" do
       WebMock.allow_net_connect!
       response = subject.send!
+      binding.pry
+
       expect(response.success?).to be true
       expect(response.body).not_to be nil
     end

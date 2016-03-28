@@ -1,14 +1,32 @@
 module PaynetApi
   class BaseResponse
-    attr_reader :response_xml, :request_xml
+    attr_reader :body, :status
 
-    def initialize response_xml = "", request_xml = ""
-      @response_xml = Nokogiri::XML("#{response_xml}")
-      @request_xml  = Nokogiri::XML("#{request_xml}")
+    def initialize(response:)
+      @body = response.body
+      @status = response.status
+      @success = response.success?
     end
 
-    def nori
-      @nori ||= Nori.new(:convert_tags_to => lambda { |tag| tag.snakecase.to_sym })
+    def success?
+      @success
+    end
+
+    # private
+    def error_code
+      @body["response"]["error_code"] if @body && @body["response"] && @body["response"]["error_code"]
+    end
+
+    def version
+      @body["response"]["version"] if @body && @body["response"] && @body["response"]["version"]
+    end
+
+    def companies
+      @body["response"]["companies"]["company"] if companies_jsonable
+    end
+
+    def companies_jsonable
+      @body && @body["response"] && @body["response"]["companies"] && @body["response"]["companies"]["company"]
     end
   end
 end
