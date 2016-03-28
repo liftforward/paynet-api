@@ -12,7 +12,6 @@ module PaynetApi
       @success
     end
 
-    # private
     def error_code
       @body["response"]["error_code"] if @body && @body["response"] && @body["response"]["error_code"]
     end
