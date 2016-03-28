@@ -17,5 +17,4 @@ group :development, :test do
   gem 'multi_xml'
   gem 'rspec-its'
   gem 'vcr'
-  gem 'crack'
 end
