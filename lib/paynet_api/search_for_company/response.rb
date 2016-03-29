@@ -5,6 +5,7 @@ module PaynetApi
         @body["response"]["companies"]["company"] if companies_jsonable
       end
 
+      private
       def companies_jsonable
         @body && @body["response"] && @body["response"]["companies"] && @body["response"]["companies"]["company"]
       end
