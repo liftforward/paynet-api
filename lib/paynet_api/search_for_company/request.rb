@@ -5,25 +5,32 @@ module PaynetApi
   module SearchForCompany
     class Request < PaynetApi::BaseRequest
       ENDPOINT = "search_for_company.asp"
-      attr_accessor :company_name, :city, :state_code, :name_match_threshold, :phone
+      attr_accessor :address, :city, :company_name, :company_name_alias, :name_match_threshold, :phone, :state_code, :tax_id
 
-      def initialize(company_name:, city:, state_code:, name_match_threshold: nil, phone: nil)
-        @company_name = company_name
+      def initialize(address: nil, city:, company_name:, company_name_alias: nil, name_match_threshold: nil, phone: nil, state_code:, tax_id: nil)
+        @address = address
         @city = city
-        @state_code = state_code
+        @company_name = company_name
+        @company_name_alias = company_name_alias
         @name_match_threshold = name_match_threshold
         @phone = phone
+        @state_code = state_code
+        @tax_id = tax_id
       end
 
       def url
         params = to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
-                  password: ENV["BASIC_AUTH_PASSWORD"],
-                  version: '0320',
-                  company_name: company_name,
+                  address: address,
+                  alias: company_name_alias,
                   city: city,
-                  state_code: state_code,
+                  company_name: company_name,
+                  password: ENV["BASIC_AUTH_PASSWORD"],
                   phone: phone,
-                  name_match_threshold: name_match_threshold})
+                  name_match_threshold: name_match_threshold,
+                  state_code: state_code,
+                  tax_id: tax_id,
+                  version: '0320'
+        })
 
         URI.encode("#{base_url}?#{params}")
       end
