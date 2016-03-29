@@ -8,7 +8,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rspec-collection_matchers'
   gem 'equivalent-xml'
-  gem 'rspec'
+  gem 'rspec', '3.4.0'
   gem 'dotenv'
   gem 'pry'
   gem 'webmock'
