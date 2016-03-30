@@ -34,7 +34,37 @@ describe PaynetApi::SearchForCompany::Request do
         its (:name_match_threshold){ should eq(nil) }
         its (:phone){ should eq(nil) }
       end
+    end
 
+    describe "#tax_id" do
+      context "when included" do
+        it "is exactly 9 characters when passed in" do
+          subject.tax_id = "short"
+          expect(subject).to have_error_for(:tax_id, "Tax is the wrong length (should be 9 characters)")
+        end
+
+        it "only contains numbers" do
+          subject.tax_id = "notnumbers"
+          expect(subject).to have_error_for(:tax_id, "Tax is not a number")
+        end
+
+        it "can be passed in as a string" do
+          subject.tax_id = "123456789"
+          expect(subject).to be_valid
+        end
+
+        it "can be passed in as a number" do
+          subject.tax_id = 123456789
+          expect(subject).to be_valid
+        end
+      end
+
+      context "when not included" do
+        it "is valid" do
+          subject.tax_id = nil
+          expect(subject).to be_valid
+        end
+      end
     end
 
     context "without required params passed in" do

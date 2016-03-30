@@ -4,6 +4,8 @@ require 'pry'
 module PaynetApi
   module SearchForCompany
     class Request < PaynetApi::BaseRequest
+      validates :tax_id, length: { is: 9 }, allow_nil: true, numericality: { only_integer: true }
+
       ENDPOINT = "search_for_company.asp"
       attr_accessor :address, :city, :company_name, :company_name_alias, :name_match_threshold, :phone, :state_code, :tax_id
 

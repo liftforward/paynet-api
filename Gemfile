@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'activemodel', '~> 4.2', '>= 4.2.6'
   gem 'rake'
   gem 'guard-rspec'
   gem 'rspec-collection_matchers'

@@ -1,7 +1,9 @@
 require 'faraday_middleware'
+require 'active_model'
 
 module PaynetApi
   class BaseRequest
+    include ActiveModel::Validations
 
     def base_url
       "#{ENV["BASE_URL"]}#{self.class::ENDPOINT}"
