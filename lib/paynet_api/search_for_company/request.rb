@@ -21,12 +21,12 @@ module PaynetApi
       end
 
       def path
-        to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
+        to_alphabetized_query({ user: PaynetApi::Config.basic_auth_user,
           address: address,
           alias: company_name_alias,
           city: city,
           company_name: company_name,
-          password: ENV["BASIC_AUTH_PASSWORD"],
+          password: PaynetApi::Config.basic_auth_password,
           phone: phone,
           name_match_threshold: name_match_threshold,
           state_code: state_code,
@@ -36,7 +36,7 @@ module PaynetApi
       end
 
       def url
-        URI.encode("#{base_url}?#{path}")
+        URI.encode("#{base_url}/search_for_company.asp?#{path}")
       end
     end
   end

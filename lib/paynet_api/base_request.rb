@@ -6,7 +6,7 @@ module PaynetApi
     include ActiveModel::Validations
 
     def base_url
-      "#{ENV["BASE_URL"]}#{self.class::ENDPOINT}"
+      PaynetApi::Config.base_url
     end
 
     def send!
