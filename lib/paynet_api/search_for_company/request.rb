@@ -4,6 +4,8 @@ require 'pry'
 module PaynetApi
   module SearchForCompany
     class Request < PaynetApi::BaseRequest
+      validates :tax_id, length: { is: 9 }, allow_nil: true, numericality: { only_integer: true }
+
       ENDPOINT = "search_for_company.asp"
       attr_accessor :address, :city, :company_name, :company_name_alias, :name_match_threshold, :phone, :state_code, :tax_id
 
@@ -18,21 +20,23 @@ module PaynetApi
         @tax_id = tax_id
       end
 
-      def url
-        params = to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
-                  address: address,
-                  alias: company_name_alias,
-                  city: city,
-                  company_name: company_name,
-                  password: ENV["BASIC_AUTH_PASSWORD"],
-                  phone: phone,
-                  name_match_threshold: name_match_threshold,
-                  state_code: state_code,
-                  tax_id: tax_id,
-                  version: '0320'
+      def path
+        to_alphabetized_query({ user: ENV["BASIC_AUTH_USER"],
+          address: address,
+          alias: company_name_alias,
+          city: city,
+          company_name: company_name,
+          password: ENV["BASIC_AUTH_PASSWORD"],
+          phone: phone,
+          name_match_threshold: name_match_threshold,
+          state_code: state_code,
+          tax_id: tax_id,
+          version: '0320'
         })
+      end
 
-        URI.encode("#{base_url}?#{params}")
+      def url
+        URI.encode("#{base_url}?#{path}")
       end
     end
   end

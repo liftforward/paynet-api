@@ -2,7 +2,7 @@ require 'pry'
 TEST_IDS_FROM_PAYNET = ["59206906", "25430734", "105755259"]
 
 describe PaynetApi::GetPaymentHistoryReport::Request do
-  let(:request) { PaynetApi::GetPaymentHistoryReport::Request.new(paynet_id: TEST_IDS_FROM_PAYNET[0]) }
+  let(:request) { PaynetApi::GetPaymentHistoryReport::Request.new(paynet_id: TEST_IDS_FROM_PAYNET[0], payment_comprehensive: "1") }
   let(:request_with_options) { PaynetApi::GetPaymentHistoryReport::Request.new(
     paynet_id: TEST_IDS_FROM_PAYNET[0],
     payment_comprehensive: "1",
@@ -16,13 +16,18 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
     master_score: "2",
     expanded_vars: "1"
   ) }
-  let(:request_with_missing_arguments) { PaynetApi::GetPaymentHistoryReport::Request.new() }
+  let(:request_without_paynet_id) { PaynetApi::GetPaymentHistoryReport::Request.new }
+  let(:request_without_any_reports_chosen) { PaynetApi::GetPaymentHistoryReport::Request.new(paynet_id: TEST_IDS_FROM_PAYNET[0]) }
 
   subject { request }
 
   describe "#initialize" do
     context "with required params passed in" do
       its (:paynet_id){ should eq(TEST_IDS_FROM_PAYNET[0]) }
+
+      # Ramdonly picking one of the reports to pass in
+      # payment comprehensive isn't required, but passing in ONE report IS.
+      its (:payment_comprehensive){ should eq("1") }
 
       context "with optional arguments" do
         subject { request_with_options }
@@ -39,7 +44,6 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
       end
 
       context "without optional arguments" do
-        its (:payment_comprehensive){ should eq(nil) }
         its (:business_background){ should eq(nil) }
         its (:public_filings){ should eq(nil) }
         its (:ucc_filings){ should eq(nil) }
@@ -52,15 +56,21 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
       end
     end
 
-    context "without required params passed in" do
+    context "without a paynet_id passed in" do
       it "raises an argument error" do
-        expect{ request_with_missing_arguments }.to raise_error(ArgumentError, "missing keyword: paynet_id")
+        expect{ request_without_paynet_id }.to raise_error(ArgumentError, "missing keyword: paynet_id")
+      end
+    end
+
+    context "without any report chosen" do
+      it "raises an argument error" do
+        expect{ request_without_any_reports_chosen }.to raise_error(ArgumentError, "You must pass in a value for at least one of the following params: payment_comprehensive, business_background, public_filings, ucc_filings, legal_name, transpo_score, office_score, constr_score, master_score, or expanded_vars")
       end
     end
   end
 
   describe "#url" do
-    let(:url) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?password=#{ENV["BASIC_AUTH_PASSWORD"]}&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
+    let(:url) { URI.encode("#{ENV["BASE_URL"]}get_payment_history_report.asp?password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=1&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
 
     context "with required arguments" do
       it "creates the correct encoded url with params for Paynet" do
