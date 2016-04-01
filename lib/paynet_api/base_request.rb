@@ -6,7 +6,7 @@ module PaynetApi
     include ActiveModel::Validations
 
     def base_url
-      "#{ENV["BASE_URL"]}#{self.class::ENDPOINT}"
+      PaynetApi::Config.base_url
     end
 
     def send!
@@ -15,7 +15,11 @@ module PaynetApi
         conn.adapter Faraday.default_adapter
       end
 
-      xml_response = connection.get
+      connection.get
+    end
+
+    def url
+      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
     end
 
     private

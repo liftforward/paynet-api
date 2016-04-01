@@ -19,5 +19,6 @@ module PaynetApi
     def version
       @body["response"]["version"] if @body && @body["response"] && @body["response"]["version"]
     end
+
   end
 end

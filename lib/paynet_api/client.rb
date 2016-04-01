@@ -1,5 +1,3 @@
-require 'pry'
-
 module PaynetApi
   class Client
     def get_payment_history_report(params)

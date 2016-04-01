@@ -23,4 +23,14 @@ end
 RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
+
+  config.before(:suite) do
+    PaynetApi::Config.base_url = ENV['BASE_URL']
+    PaynetApi::Config.basic_auth_user = ENV['BASIC_AUTH_USER']
+    PaynetApi::Config.basic_auth_password = ENV['BASIC_AUTH_PASSWORD']
+    # PaynetApi::Config.proxy_url = ENV['']
+    # PaynetApi::Config.log = ENV['']
+    # PaynetApi::Config.log_level = ENV['']
+  end
+
 end
