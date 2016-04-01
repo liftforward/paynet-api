@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://secure.paynetonline.com//search_for_company.asp?address=76%209th%20Ave&city=New%20York&company_name=google&password=Che6eqas!&state_code=NY&user=paynet_direct_test@liftforward.com&version=0320
+    uri: https://secure.paynetonline.com/search_for_company.asp?address=76%209th%20Ave&city=New%20York&company_name=google&password=Che6eqas!&state_code=NY&user=paynet_direct_test@liftforward.com&version=0320
     body:
       encoding: US-ASCII
       string: ''
@@ -33,7 +33,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Thu, 31 Mar 2016 21:30:16 GMT
+      - Fri, 01 Apr 2016 20:00:57 GMT
       Content-Length:
       - '12010'
     body:
@@ -96,5 +96,5 @@ http_interactions:
         POTRERO AVE PO#276547]]></street><city><![CDATA[SAN FRANCISCO]]></city><state>CA</state><postal_code>94103</postal_code><country_code>USA</country_code></address><address><street><![CDATA[365
         MAIN ST ]]></street><city><![CDATA[SAN FRANCISCO]]></city><state>CA</state><postal_code>94105</postal_code><country_code>USA</country_code></address></additional_addresses><telephone>6503300100</telephone><additional_phones><phone>2146496288</phone><phone>4152060131</phone><phone>4154958270</phone><phone>6502144956</phone><phone>6502145702</phone><phone>6502146220</phone><phone>6502530000</phone><phone>6502533985</phone><phone>6502535248</phone><phone>6502535750</phone><phone>6506181434</phone><phone>6506181499</phone><phone>6506234000</phone><phone>6506234189</phone><phone>6506235325</phone></additional_phones><match_score>80</match_score></company></companies></response>'
     http_version: 
-  recorded_at: Thu, 31 Mar 2016 21:30:19 GMT
+  recorded_at: Fri, 01 Apr 2016 20:01:24 GMT
 recorded_with: VCR 3.0.1

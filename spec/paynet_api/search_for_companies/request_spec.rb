@@ -102,12 +102,5 @@ describe PaynetApi::SearchForCompany::Request do
       expect(faraday_connection_double).to receive(:get)
       subject.send!
     end
-
-    it "Successfully connects to Paynet" do
-      WebMock.allow_net_connect!
-      response = subject.send!
-      expect(response.success?).to be true
-      expect(response.body).not_to be nil
-    end
   end
 end

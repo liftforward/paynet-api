@@ -15,7 +15,11 @@ module PaynetApi
         conn.adapter Faraday.default_adapter
       end
 
-      xml_response = connection.get
+      connection.get
+    end
+
+    def url
+      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
     end
 
     private
