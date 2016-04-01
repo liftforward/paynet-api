@@ -7,9 +7,9 @@ module PaynetApi
       validates :tax_id, length: { is: 9 }, allow_nil: true, numericality: { only_integer: true }
 
       ENDPOINT = "search_for_company.asp"
-      attr_accessor :address, :city, :company_name, :company_name_alias, :name_match_threshold, :phone, :state_code, :tax_id
+      attr_accessor :address, :city, :company_name, :company_name_alias, :name_match_threshold, :phone, :state_code, :postal_code, :tax_id
 
-      def initialize(address: nil, city:, company_name:, company_name_alias: nil, name_match_threshold: nil, phone: nil, state_code:, tax_id: nil)
+      def initialize(address: nil, city:, company_name:, company_name_alias: nil, name_match_threshold: nil, phone: nil, state_code:, postal_code: nil, tax_id: nil)
         @address = address
         @city = city
         @company_name = company_name
@@ -18,6 +18,7 @@ module PaynetApi
         @phone = phone
         @state_code = state_code
         @tax_id = tax_id
+        @postal_code = postal_code
       end
 
       def path
@@ -31,6 +32,7 @@ module PaynetApi
             phone: phone,
             name_match_threshold: name_match_threshold,
             state_code: state_code,
+            postal_code: postal_code,
             tax_id: tax_id,
             version: '0320'
           }
