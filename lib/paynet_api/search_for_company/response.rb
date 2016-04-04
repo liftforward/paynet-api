@@ -4,11 +4,7 @@ module PaynetApi
       def companies
         companies = parsed_xml.response.companies
 
-        if companies.nil?
-          []
-        else
-          companies.company
-        end
+        return companies.nil? ? [] : [].push(companies.company).flatten
       end
 
       def success?

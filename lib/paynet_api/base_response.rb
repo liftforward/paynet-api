@@ -5,10 +5,7 @@ module PaynetApi
     def initialize(response_xml:, request:)
       @xml = response_xml
       @request = request
-      # @status = response.status
-      # @success = response.success?
     end
-
 
     def parsed_xml
       @parsed_xml ||= Hashie::Mash.new nori.parse(xml)

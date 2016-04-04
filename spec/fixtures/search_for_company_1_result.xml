@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response error_code="0" version="0320">
+  <companies>
+    <company>
+      <paynet_id>59715829</paynet_id>
+      <name><![CDATA[GOOGLE INC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[111 EIGHTH AVE FL 6]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10011</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[210 THE BLUFFS STE D]]></street>
+          <city><![CDATA[AUSTELL]]></city>
+          <state>GA</state>
+          <postal_code>30168</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>2125654924</telephone>
+      <additional_phones>
+        <phone>2125650000</phone>
+        <phone>2125650001</phone>
+        <phone>2129944862</phone>
+        <phone>4257395726</phone>
+        <phone>6502247302</phone>
+        <phone>6509999999</phone>
+      </additional_phones>
+      <match_score>98</match_score>
+    </company>
+  </companies>
+</response>
