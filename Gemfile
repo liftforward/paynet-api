@@ -18,4 +18,7 @@ group :development, :test do
   gem 'multi_xml'
   gem 'rspec-its'
   gem 'vcr'
+  gem 'nori'
+  gem 'awesome_print'
+  gem 'hashie'
 end

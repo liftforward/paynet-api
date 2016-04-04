@@ -9,15 +9,6 @@ module PaynetApi
       PaynetApi::Config.base_url
     end
 
-    def send!
-      connection = Faraday.new url do |conn|
-        conn.response :xml,  :content_type => /\bxml$/
-        conn.adapter Faraday.default_adapter
-      end
-
-      connection.get
-    end
-
     def url
       URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
     end

@@ -1,24 +1,32 @@
 module PaynetApi
   class BaseResponse
-    attr_reader :body, :status
+    attr_reader :body, :status, :request, :xml
 
-    def initialize(response:)
-      @body = response.body
-      @status = response.status
-      @success = response.success?
+    def initialize(response_xml:, request:)
+      @xml = response_xml
+      @request = request
+      # @status = response.status
+      # @success = response.success?
     end
 
-    def success?
-      @success
+
+    def parsed_xml
+      @parsed_xml ||= Hashie::Mash.new nori.parse(xml)
+    end
+
+    def nori
+      @nori ||= Nori.new(:convert_tags_to => lambda { |tag| tag.snakecase.to_sym })
     end
 
     def error_code
-      @body["response"]["error_code"] if @body && @body["response"] && @body["response"]["error_code"]
+      parsed_xml["response"]["error_code"] if parsed_xml && parsed_xml["response"] && parsed_xml["response"]["error_code"]
     end
 
     def version
-      @body["response"]["version"] if @body && @body["response"] && @body["response"]["version"]
+      parsed_xml["response"]["version"] if parsed_xml && parsed_xml["response"] && parsed_xml["response"]["version"]
     end
 
+    def status
+    end
   end
 end
