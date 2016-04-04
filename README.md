@@ -35,10 +35,10 @@ client = PaynetApi::Client.new do |config|
 ### Working with the API
 
 #### Search For Company
-client.search_for_company(company_name: "Acme Co", city: "Durham", state_code: "NC")
+`client.search_for_company(company_name: "Acme Co", city: "Durham", state_code: "NC")`
 
 #### Get Payment History Report
-client.get_payment_history_report(paynet_id: 123456789, payment_comprehensive: 1)
+`client.get_payment_history_report(paynet_id: 123456789, payment_comprehensive: 1)`
 
 ### Development
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
