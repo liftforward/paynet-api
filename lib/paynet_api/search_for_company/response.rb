@@ -2,13 +2,16 @@ module PaynetApi
   module SearchForCompany
     class Response < PaynetApi::BaseResponse
       def companies
-        @body["response"]["companies"]["company"] if companies_jsonable
+        companies = parsed_xml.response.companies
+
+        return companies.nil? ? [] : [].push(companies.company).flatten
       end
 
-      private
-      def companies_jsonable
-        @body && @body["response"] && @body["response"]["companies"] && @body["response"]["companies"]["company"]
+      def success?
+        # parsed_xml.response.has_key? :companies
+        parsed_xml.response[:@error_code] == "0"
       end
+
     end
   end
 end

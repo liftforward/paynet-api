@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'nori'
 
 require File.dirname(__FILE__) + "/paynet_api/version"
 require File.dirname(__FILE__) + "/paynet_api/config"

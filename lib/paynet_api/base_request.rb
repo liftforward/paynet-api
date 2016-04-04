@@ -5,17 +5,24 @@ module PaynetApi
   class BaseRequest
     include ActiveModel::Validations
 
-    def base_url
-      PaynetApi::Config.base_url
+    def options
+      @options ||= { 
+        basic_auth_user: PaynetApi::Config.basic_auth_user,
+        basic_auth_password: PaynetApi::Config.basic_auth_password,
+        base_url: PaynetApi::Config.base_url
+      }
     end
 
-    def send!
-      connection = Faraday.new url do |conn|
-        conn.response :xml,  :content_type => /\bxml$/
-        conn.adapter Faraday.default_adapter
-      end
+    def user
+      options[:basic_auth_user]
+    end
 
-      connection.get
+    def password
+      options[:basic_auth_password]
+    end
+
+    def base_url
+      options[:base_url]
     end
 
     def url

@@ -88,13 +88,4 @@ describe PaynetApi::GetPaymentHistoryReport::Request do
     end
   end
 
-  describe "#send!" do
-    let(:faraday_connection_double) { instance_double(Faraday::Connection, :get => "faraday response")}
-
-    it "sends Faraday the url" do
-      expect(Faraday).to receive(:new).with(subject.url).and_return(faraday_connection_double)
-      expect(faraday_connection_double).to receive(:get)
-      subject.send!
-    end
-  end
 end
