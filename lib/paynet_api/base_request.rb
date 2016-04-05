@@ -6,7 +6,7 @@ module PaynetApi
     include ActiveModel::Validations
 
     def options
-      @options ||= { 
+      @options ||= {
         basic_auth_user: PaynetApi::Config.basic_auth_user,
         basic_auth_password: PaynetApi::Config.basic_auth_password,
         base_url: PaynetApi::Config.base_url
@@ -26,7 +26,7 @@ module PaynetApi
     end
 
     def url
-      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
+      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{query}")
     end
 
     def auth_attributes
@@ -34,6 +34,10 @@ module PaynetApi
         user: user,
         password: password,
       }
+    end
+
+    def query
+      to_alphabetized_query auth_attributes.merge(params)
     end
 
     private
