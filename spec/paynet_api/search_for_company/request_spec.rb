@@ -100,4 +100,19 @@ describe PaynetApi::SearchForCompany::Request do
       end
     end
   end
+
+  describe "#from_params" do
+    context "params just minimum" do
+      let(:params_hash) { { city: "", company_name: "", state_code: "" } }
+      subject { PaynetApi::SearchForCompany::Request.from_params(params_hash) }
+
+      its(:params) { is_expected.to include(params_hash) }
+    end
+    context "params contain alias" do
+      let(:params_hash) { { alias: "Make America Great Again Corp.", city: "", company_name: "", state_code: "" } }
+      subject { PaynetApi::SearchForCompany::Request.from_params(params_hash) }
+
+      its(:params) { is_expected.to include(params_hash) }
+    end
+  end
 end

@@ -31,6 +31,12 @@ module PaynetApi
           tax_id: tax_id
         }
       end
+
+      def self.from_params params
+        local_params = params.merge(company_name_alias: params[:alias]) 
+        local_params.delete(:alias)
+        self.new (local_params)
+      end
     end
   end
 end
