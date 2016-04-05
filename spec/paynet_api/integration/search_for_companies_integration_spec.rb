@@ -2,13 +2,6 @@ require "paynet_api"
 require "awesome_print"
 
 describe "Paynet API Integration", :slow, :integration do
-
-  before do
-    PaynetApi::Config.base_url = ENV['BASE_URL']
-    PaynetApi::Config.basic_auth_user = ENV['BASIC_AUTH_USER']
-    PaynetApi::Config.basic_auth_password = ENV['BASIC_AUTH_PASSWORD']
-  end
-
   let(:client) { PaynetApi::Client.new }
 
   context "Paynet API returns results" do

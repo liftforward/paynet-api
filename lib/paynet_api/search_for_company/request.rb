@@ -22,24 +22,23 @@ module PaynetApi
       end
 
       def path
-        to_alphabetized_query(
-          { 
-            user: user,
-            password: password,
-            address: address,
-            alias: company_name_alias,
-            city: city,
-            company_name: company_name,
-            phone: phone,
-            name_match_threshold: name_match_threshold,
-            state_code: state_code,
-            postal_code: postal_code,
-            tax_id: tax_id,
-            version: '0320'
-          }
-        )
+        to_alphabetized_query auth_attributes.merge(as_json)
       end
 
+      def as_json
+        {
+          address: address,
+          alias: company_name_alias,
+          city: city,
+          company_name: company_name,
+          phone: phone,
+          name_match_threshold: name_match_threshold,
+          state_code: state_code,
+          postal_code: postal_code,
+          tax_id: tax_id,
+          version: '0320'
+        }
+      end
     end
   end
 end
