@@ -21,7 +21,6 @@ module PaynetApi
 
     def params
       {
-        version: '0320',
         paynet_id: paynet_id,
         payment_comprehensive: payment_comprehensive,
         business_background: business_background,

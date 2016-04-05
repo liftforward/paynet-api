@@ -28,8 +28,7 @@ module PaynetApi
           name_match_threshold: name_match_threshold,
           state_code: state_code,
           postal_code: postal_code,
-          tax_id: tax_id,
-          version: '0320'
+          tax_id: tax_id
         }
       end
     end

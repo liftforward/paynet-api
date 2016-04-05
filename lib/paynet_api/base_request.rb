@@ -32,6 +32,7 @@ module PaynetApi
       {
         user: user,
         password: password,
+        version: '0320'
       }
     end
 
