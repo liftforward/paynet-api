@@ -12,6 +12,7 @@ require 'hashie' # and any other gems you need
 require 'rspec/its'
 require 'vcr'
 require 'support/helper_methods'
+require 'pry'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'

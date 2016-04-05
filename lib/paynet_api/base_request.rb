@@ -1,4 +1,3 @@
-require 'faraday_middleware'
 require 'active_model'
 
 module PaynetApi

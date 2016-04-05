@@ -1,10 +1,9 @@
-require 'pry'
-TEST_IDS_FROM_PAYNET = ["59206906", "25430734", "105755259"]
-
 describe PaynetApi::ReportRequest do
-  let(:request) { PaynetApi::ReportRequest.new(paynet_id: TEST_IDS_FROM_PAYNET[0], payment_comprehensive: "1") }
+  let(:test_id_from_paynet) { "59206906" }
+
+  let(:request) { PaynetApi::ReportRequest.new(paynet_id: test_id_from_paynet, payment_comprehensive: "1") }
   let(:request_with_options) { PaynetApi::ReportRequest.new(
-    paynet_id: TEST_IDS_FROM_PAYNET[0],
+    paynet_id: test_id_from_paynet,
     payment_comprehensive: "1",
     business_background: "1",
     public_filings: "1",
@@ -17,13 +16,19 @@ describe PaynetApi::ReportRequest do
     expanded_vars: "1"
   ) }
   let(:request_without_paynet_id) { PaynetApi::ReportRequest.new }
-  let(:request_without_any_reports_chosen) { PaynetApi::ReportRequest.new(paynet_id: TEST_IDS_FROM_PAYNET[0]) }
+  let(:request_without_any_reports_chosen) { PaynetApi::ReportRequest.new(paynet_id: test_id_from_paynet) }
 
   subject { request }
 
+  describe ".FORMAT" do
+    it "defaults to nil" do
+      expect(subject.class::FORMAT).to eq(nil)
+    end
+  end
+
   describe "#initialize" do
     context "with required params passed in" do
-      its (:paynet_id){ should eq(TEST_IDS_FROM_PAYNET[0]) }
+      its (:paynet_id){ should eq(test_id_from_paynet) }
 
       # Ramdonly picking one of the reports to pass in
       # payment comprehensive isn't required, but passing in ONE report IS.
