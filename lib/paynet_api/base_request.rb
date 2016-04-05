@@ -29,8 +29,14 @@ module PaynetApi
       URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
     end
 
-    private
+    def auth_attributes
+      {
+        user: user,
+        password: password,
+      }
+    end
 
+    private
     def alphabetize_by_key(hash)
       hash.sort.to_h
     end
