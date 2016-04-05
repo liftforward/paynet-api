@@ -1,5 +1,3 @@
-require 'pry'
-
 describe PaynetApi::Client do
   subject { PaynetApi::Client.new }
 
@@ -39,7 +37,7 @@ describe PaynetApi::Client do
     let(:params) { { company_name: "Acme Co", city: "Durham", state_code: "NC"} }
     let(:client) { PaynetApi::Client.new }
     subject(:search) { client.search_for_company(params) }
-    
+
     context "with required params passed in" do
       let(:faraday_response_double) { double("Response") }
       before do

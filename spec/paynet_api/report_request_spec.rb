@@ -1,6 +1,3 @@
-require 'pry'
-TEST_IDS_FROM_PAYNET = ["59206906", "25430734", "105755259"]
-
 describe PaynetApi::ReportRequest do
   let(:request) { PaynetApi::ReportRequest.new(paynet_id: TEST_IDS_FROM_PAYNET[0], payment_comprehensive: "1") }
   let(:request_with_options) { PaynetApi::ReportRequest.new(
@@ -69,6 +66,11 @@ describe PaynetApi::ReportRequest do
     end
   end
 
+  describe "#format" do
+    it "defaults to nil" do
+      expect(subject.format).to eq(nil)
+    end
+  end
   describe "#query" do
     let(:query) { URI.encode("password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=1&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
 

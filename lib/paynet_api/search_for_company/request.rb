@@ -1,6 +1,3 @@
-require 'faraday'
-require 'pry'
-
 module PaynetApi
   module SearchForCompany
     class Request < PaynetApi::BaseRequest

@@ -18,6 +18,10 @@ module PaynetApi
       raise ArgumentError, "You must pass in a value for at least one of the following params: payment_comprehensive, business_background, public_filings, ucc_filings, legal_name, transpo_score, office_score, constr_score, master_score, or expanded_vars" if no_reports_requested?
     end
 
+    def format
+      nil
+    end
+
     def params
       { version: '0320',
         paynet_id: paynet_id,
@@ -30,7 +34,8 @@ module PaynetApi
         office_score: office_score,
         constr_score: constr_score,
         master_score: master_score,
-        expanded_vars: expanded_vars
+        expanded_vars: expanded_vars,
+        format: format
       }
     end
 
