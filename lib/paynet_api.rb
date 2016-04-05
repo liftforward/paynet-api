@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'nori'
+require 'faraday_middleware'
 
 require File.dirname(__FILE__) + "/paynet_api/version"
 require File.dirname(__FILE__) + "/paynet_api/config"
