@@ -72,22 +72,9 @@ describe PaynetApi::SearchForCompany::Request do
     end
   end
 
-  describe "#url" do
-    let(:url) { URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?city=#{subject.city}&company_name=#{subject.company_name}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&state_code=#{subject.state_code}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
-
-    context "with required arguments" do
-      it "creates the correct encoded url with params for Paynet" do
-        expect(subject.url).to eq(url)
-      end
-    end
-
-    context "with optional arguments" do
-      let(:url_with_options) { URI.encode("#{ENV["BASE_URL"]}search_for_company.asp?address=80 W 12th St New York, NY 10004&alias=Fake Acme&city=#{subject.city}&company_name=#{subject.company_name}&name_match_threshold=#{subject.name_match_threshold}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&phone=#{subject.phone}&state_code=#{subject.state_code}&tax_id=123&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
-      subject { request_with_options }
-
-      it "creates the correct encoded url with params for Paynet" do
-        expect(subject.url).to eq(url_with_options)
-      end
+  describe ".ENDPOINT" do
+    it "equals search_for_company.asp" do
+      expect(PaynetApi::SearchForCompany::Request::ENDPOINT).to eq("search_for_company.asp")
     end
   end
 

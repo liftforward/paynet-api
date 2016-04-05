@@ -21,11 +21,7 @@ module PaynetApi
         options.merge!(opts)
       end
 
-      def path
-        to_alphabetized_query auth_attributes.merge(as_json)
-      end
-
-      def as_json
+      def params
         {
           address: address,
           alias: company_name_alias,

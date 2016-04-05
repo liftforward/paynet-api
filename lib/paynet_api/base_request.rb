@@ -36,6 +36,10 @@ module PaynetApi
       }
     end
 
+    def path
+      to_alphabetized_query auth_attributes.merge(params)
+    end
+
     private
     def alphabetize_by_key(hash)
       hash.sort.to_h
