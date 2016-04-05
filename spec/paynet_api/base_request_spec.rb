@@ -3,7 +3,7 @@ describe PaynetApi::BaseRequest do
 
   subject{ request }
 
-  describe "#path" do
+  describe "#query" do
     before do
       allow(subject).to receive(:params).and_return({version: "0123", alpha: "alpha"})
       stub_const("PaynetApi::BaseRequest::ENDPOINT", "endpoint")
@@ -11,19 +11,19 @@ describe PaynetApi::BaseRequest do
 
     context "with required arguments" do
       it "creates the correct encoded path with params for Paynet" do
-        expect(subject.path).to eq(URI.encode("alpha=alpha&password=#{ENV["BASIC_AUTH_PASSWORD"]}&user=#{ENV["BASIC_AUTH_USER"]}&version=0123"))
+        expect(subject.query).to eq(URI.encode("alpha=alpha&password=#{ENV["BASIC_AUTH_PASSWORD"]}&user=#{ENV["BASIC_AUTH_USER"]}&version=0123"))
       end
     end
   end
 
   describe "#url" do
     before do
-      allow(subject).to receive(:path).and_return("path")
+      allow(subject).to receive(:query).and_return("query")
       stub_const("PaynetApi::BaseRequest::ENDPOINT", "endpoint")
     end
 
     it "creates the correct encoded url with params for Paynet" do
-      expect(subject.url).to eq(URI.encode("#{ENV["BASE_URL"]}endpoint?path"))
+      expect(subject.url).to eq(URI.encode("#{ENV["BASE_URL"]}endpoint?query"))
     end
   end
 

@@ -26,7 +26,7 @@ module PaynetApi
     end
 
     def url
-      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{path}")
+      URI.encode("#{base_url}#{self.class::ENDPOINT}?#{query}")
     end
 
     def auth_attributes
@@ -36,7 +36,7 @@ module PaynetApi
       }
     end
 
-    def path
+    def query
       to_alphabetized_query auth_attributes.merge(params)
     end
 

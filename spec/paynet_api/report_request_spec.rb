@@ -69,21 +69,21 @@ describe PaynetApi::ReportRequest do
     end
   end
 
-  describe "#path" do
-    let(:path) { URI.encode("password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=1&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
+  describe "#query" do
+    let(:query) { URI.encode("password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=1&paynet_id=#{subject.paynet_id}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
 
     context "with required arguments" do
       it "creates the correct encoded path with params for Paynet" do
-        expect(subject.path).to eq(path)
+        expect(subject.query).to eq(query)
       end
     end
 
     context "with optional arguments" do
-      let(:path_with_options) { URI.encode("business_background=#{subject.business_background}&constr_score=#{subject.constr_score}&expanded_vars=#{subject.expanded_vars}&legal_name=#{subject.legal_name}&master_score=#{subject.master_score}&office_score=#{subject.office_score}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=#{subject.payment_comprehensive}&paynet_id=#{subject.paynet_id}&public_filings=#{subject.public_filings}&transpo_score=#{subject.transpo_score}&ucc_filings=#{subject.ucc_filings}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
+      let(:query_with_options) { URI.encode("business_background=#{subject.business_background}&constr_score=#{subject.constr_score}&expanded_vars=#{subject.expanded_vars}&legal_name=#{subject.legal_name}&master_score=#{subject.master_score}&office_score=#{subject.office_score}&password=#{ENV["BASIC_AUTH_PASSWORD"]}&payment_comprehensive=#{subject.payment_comprehensive}&paynet_id=#{subject.paynet_id}&public_filings=#{subject.public_filings}&transpo_score=#{subject.transpo_score}&ucc_filings=#{subject.ucc_filings}&user=#{ENV["BASIC_AUTH_USER"]}&version=0320") }
       subject { request_with_options }
 
-      it "creates the correct encoded path with params for Paynet" do
-        expect(subject.path).to eq(path_with_options)
+      it "creates the correct encoded query with params for Paynet" do
+        expect(subject.query).to eq(query_with_options)
       end
     end
   end
