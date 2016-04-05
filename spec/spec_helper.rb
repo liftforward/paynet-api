@@ -26,8 +26,6 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 
   config.before(:suite) do
-    TEST_IDS_FROM_PAYNET = ["59206906", "25430734", "105755259"]
-
     PaynetApi::Config.base_url = ENV['BASE_URL']
     PaynetApi::Config.basic_auth_user = ENV['BASIC_AUTH_USER']
     PaynetApi::Config.basic_auth_password = ENV['BASIC_AUTH_PASSWORD']

@@ -1,5 +1,7 @@
 describe PaynetApi::CobrandGetPaymentHistoryReport::Request do
-  subject { PaynetApi::CobrandGetPaymentHistoryReport::Request.new(paynet_id: TEST_IDS_FROM_PAYNET[0], payment_comprehensive: "1") }
+  let(:test_id_from_paynet) { "59206906" }
+
+  subject { PaynetApi::CobrandGetPaymentHistoryReport::Request.new(paynet_id: test_id_from_paynet, payment_comprehensive: "1") }
 
   describe ".ENDPOINT" do
     it "equals cobrand_get_payment_history_report.asp" do
@@ -7,9 +9,9 @@ describe PaynetApi::CobrandGetPaymentHistoryReport::Request do
     end
   end
 
-  describe "#format" do
+  describe ".FORMAT" do
     it "equals pdf" do
-      expect(subject.format).to eq("pdf")
+      expect(subject.class::FORMAT).to eq("pdf")
     end
   end
 end
