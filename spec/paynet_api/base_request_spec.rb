@@ -1,7 +1,5 @@
 describe PaynetApi::BaseRequest do
-  let(:request) { PaynetApi::BaseRequest.new }
-
-  subject{ request }
+  subject{ PaynetApi::BaseRequest.new }
 
   describe "#query" do
     before do
@@ -52,5 +50,4 @@ describe PaynetApi::BaseRequest do
       expect(subject.base_url).to eq(PaynetApi::Config.base_url)
     end
   end
-
 end

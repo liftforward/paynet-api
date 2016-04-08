@@ -1,31 +1,21 @@
 describe PaynetApi::BaseResponse do
-  # let(:response_double) { instance_double(Faraday::Response,
-  #   body: { response: {
-  #     error_code: 200,
-  #     version: 0320
-  #     }},
-  #   status: 200,
-  #   success?: true
-  # )}
+  subject{ PaynetApi::BaseResponse.new(response_xml: xml, request: "foo") }
 
-  let(:response) { PaynetApi::BaseResponse.new(response_double, nil) }
-  # let(:response_without_faraday_object) { PaynetApi::BaseResponse.new }
+  describe "#success?" do
+    context "when there is an error code of 0" do
+      let(:xml) { File.read 'spec/fixtures/search_for_company_multiple_results.xml' }
 
-  subject{ response }
+      it "returns true" do
+        expect(subject.success?).to be true
+      end
+    end
 
-  describe "#initialize" do
-    # context "with a faraday response passed in" do
-    #   its (:body){ should eq(response_double.body) }
-    #   its (:status){ should eq(response_double.status) }
-    #   its (:success?){ should eq(response_double.success?) }
-    #   its (:error_code){ should eq(response_double.body[:error_code]) }
-    #   its (:version){ should eq(response_double.body[:version]) }
-    # end
+    context "when there is an error code of something other than zero" do
+      let(:xml) { File.read 'spec/fixtures/search_for_company_error.xml' }
 
-    # context "without a faraday response passed in" do
-    #   it "raises an argument error" do
-    #     expect{ response_without_faraday_object }.to raise_error(ArgumentError, "missing keyword: response")
-    #   end
-    # end
+      it "returns false" do
+        expect(subject.success?).to be false
+      end
+    end
   end
 end

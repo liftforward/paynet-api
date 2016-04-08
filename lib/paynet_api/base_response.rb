@@ -11,6 +11,10 @@ module PaynetApi
       @parsed_xml ||= Hashie::Mash.new nori.parse(xml)
     end
 
+    def success?
+      parsed_xml.response[:@error_code] == "0"
+    end
+
     def nori
       @nori ||= Nori.new(:convert_tags_to => lambda { |tag| tag.snakecase.to_sym })
     end
