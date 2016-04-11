@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<response error_code="0" version="0320">
+  <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <report_options>
+      <report_option provided="1">Credit History</report_option>
+    </report_options>
+    <report_data>
+      <generation_date_time>4/6/2016 1:48:04 PM</generation_date_time>
+      <paynet_id>59206906</paynet_id>
+      <report_id>109819707</report_id>
+      <generated_for_member><![CDATA[Lift Forward]]></generated_for_member>
+      <name_address>
+        <primary_name><![CDATA[VETOS TATTOO PARLOUR]]></primary_name>
+        <other_names/>
+        <address_1><![CDATA[5750 BOBSTON RD]]></address_1>
+        <address_2><![CDATA[]]></address_2>
+        <city><![CDATA[NOKOMIS]]></city>
+        <state_code>TN</state_code>
+        <postal_code>01091</postal_code>
+        <country_code>USA</country_code>
+        <telephone>5039655423</telephone>
+        <fax/>
+        <tax_id>*****4320</tax_id>
+      </name_address>
+      <inquiries total="15">
+        <inquiry month="2016-04">0</inquiry>
+        <inquiry month="2016-03">2</inquiry>
+        <inquiry month="2016-02">5</inquiry>
+        <inquiry month="2016-01">2</inquiry>
+        <inquiry month="2015-12">2</inquiry>
+        <inquiry month="2015-11">2</inquiry>
+      </inquiries>
+      <primary_equipment_type_code>TRCK</primary_equipment_type_code>
+      <primary_equipment_type_desc>Truck</primary_equipment_type_desc>
+      <oldest_contract_start_date>2001-12-31</oldest_contract_start_date>
+      <last_activity_reported_date>2010-07-25</last_activity_reported_date>
+      <open_contracts_cnt>0</open_contracts_cnt>
+      <closed_contracts_cnt>2</closed_contracts_cnt>
+      <orig_receivable_amt>216567.01</orig_receivable_amt>
+      <high_credit_amt>126853.80</high_credit_amt>
+      <avg_high_credit_per_lender_amt>126854</avg_high_credit_per_lender_amt>
+      <avg_orig_term_months>60</avg_orig_term_months>
+      <cur_bal_amt>0.00</cur_bal_amt>
+      <cur_bal_amt_pct_of_high_credit>0</cur_bal_amt_pct_of_high_credit>
+      <cur_bal_amt_pct_of_orig_receivable>0</cur_bal_amt_pct_of_orig_receivable>
+      <monthly_payment_amt>0</monthly_payment_amt>
+      <annualized_scheduled_pmts>0</annualized_scheduled_pmts>
+      <loss_amt>0</loss_amt>
+      <scheduled_payments>66</scheduled_payments>
+      <past_due_0130_occurrences>0</past_due_0130_occurrences>
+      <past_due_3160_occurrences>0</past_due_3160_occurrences>
+      <past_due_6190_occurrences>0</past_due_6190_occurrences>
+      <past_due_91_plus_occurrences>0</past_due_91_plus_occurrences>
+      <past_due_31_plus_occurrences>0</past_due_31_plus_occurrences>
+      <cur_bal_cur_00_amt>0.00</cur_bal_cur_00_amt>
+      <cur_bal_cur_30_amt>0.00</cur_bal_cur_30_amt>
+      <cur_bal_past_due_0130_amt>0</cur_bal_past_due_0130_amt>
+      <cur_bal_past_due_3160_amt>0</cur_bal_past_due_3160_amt>
+      <cur_bal_past_due_6190_amt>0</cur_bal_past_due_6190_amt>
+      <cur_bal_past_due_91_plus_amt>0</cur_bal_past_due_91_plus_amt>
+      <cur_bal_past_due_31_plus_amt>0</cur_bal_past_due_31_plus_amt>
+      <past_due_0130_amt>0</past_due_0130_amt>
+      <past_due_3160_amt>0</past_due_3160_amt>
+      <past_due_6190_amt>0</past_due_6190_amt>
+      <past_due_91_plus_amt>0</past_due_91_plus_amt>
+      <past_due_31_plus_amt>0</past_due_31_plus_amt>
+      <cur_00_amt_pct_of_cur_bal>0</cur_00_amt_pct_of_cur_bal>
+      <cur_30_amt_pct_of_cur_bal>0</cur_30_amt_pct_of_cur_bal>
+      <past_due_0130_amt_pct_of_cur_bal xsi:nil="true"/>
+      <past_due_3160_amt_pct_of_cur_bal xsi:nil="true"/>
+      <past_due_6190_amt_pct_of_cur_bal xsi:nil="true"/>
+      <past_due_91_plus_amt_pct_of_cur_bal xsi:nil="true"/>
+      <past_due_31_plus_amt_pct_of_cur_bal>0</past_due_31_plus_amt_pct_of_cur_bal>
+      <most_recent_past_due_0130_date xsi:nil="true"/>
+      <most_recent_past_due_3160_date xsi:nil="true"/>
+      <most_recent_past_due_6190_date xsi:nil="true"/>
+      <most_recent_past_due_91_plus_date xsi:nil="true"/>
+      <most_recent_past_due_0130_never>0</most_recent_past_due_0130_never>
+      <most_recent_past_due_3160_never>1</most_recent_past_due_3160_never>
+      <most_recent_past_due_6190_never>1</most_recent_past_due_6190_never>
+      <most_recent_past_due_91_plus_never>1</most_recent_past_due_91_plus_never>
+      <most_recent_loss_amt_date xsi:nil="true"/>
+      <most_recent_loss_status_date xsi:nil="true"/>
+      <recent_avg_days_past_due xsi:nil="true"/>
+      <recent_avg_days_past_due_unknown_ind>0</recent_avg_days_past_due_unknown_ind>
+      <hist_avg_days_past_due xsi:nil="true"/>
+      <hist_avg_days_past_due_unknown_ind>0</hist_avg_days_past_due_unknown_ind>
+      <contract_detail_included_cnt>2</contract_detail_included_cnt>
+      <member_lenders>
+        <member_lender number="1">
+          <primary_industry>COLL</primary_industry>
+          <as_of_date>2006-05-31</as_of_date>
+          <orig_receivable_amt>216567.01</orig_receivable_amt>
+          <high_credit_amt>126853.8</high_credit_amt>
+          <cur_bal_amt>0</cur_bal_amt>
+          <cur_bal_amt_pct_of_high_credit>0</cur_bal_amt_pct_of_high_credit>
+          <cur_bal_amt_pct_of_orig_receivable>0</cur_bal_amt_pct_of_orig_receivable>
+          <monthly_payment_amt>0</monthly_payment_amt>
+          <annualized_scheduled_pmts>0</annualized_scheduled_pmts>
+          <loss_amt>0</loss_amt>
+          <past_due_0130_amt>0</past_due_0130_amt>
+          <past_due_3160_amt>0</past_due_3160_amt>
+          <past_due_6190_amt>0</past_due_6190_amt>
+          <past_due_91_plus_amt>0</past_due_91_plus_amt>
+          <scheduled_payments>66</scheduled_payments>
+          <past_due_0130_occurrences>0</past_due_0130_occurrences>
+          <past_due_3160_occurrences>0</past_due_3160_occurrences>
+          <past_due_6190_occurrences>0</past_due_6190_occurrences>
+          <past_due_91_plus_occurrences>0</past_due_91_plus_occurrences>
+          <most_recent_past_due_0130_date xsi:nil="true"/>
+          <most_recent_past_due_3160_date xsi:nil="true"/>
+          <most_recent_past_due_6190_date xsi:nil="true"/>
+          <most_recent_past_due_91_plus_date xsi:nil="true"/>
+          <most_recent_past_due_0130_never>0</most_recent_past_due_0130_never>
+          <most_recent_past_due_3160_never>1</most_recent_past_due_3160_never>
+          <most_recent_past_due_6190_never>1</most_recent_past_due_6190_never>
+          <most_recent_past_due_91_plus_never>1</most_recent_past_due_91_plus_never>
+          <contracts>
+            <contract>
+              <name_address>
+                <primary_name><![CDATA[VETOS TATTOO PARLOUR]]></primary_name>
+                <address_1><![CDATA[5750 BOBSTON RD]]></address_1>
+                <address_2><![CDATA[]]></address_2>
+                <city><![CDATA[NOKOMIS]]></city>
+                <state_code>TN</state_code>
+                <postal_code>01091</postal_code>
+                <telephone>5039655423</telephone>
+                <tax_id>*****4320</tax_id>
+              </name_address>
+              <contract_type>Loan</contract_type>
+              <equipment_type>TRCK</equipment_type>
+              <guarantor_code>UNK</guarantor_code>
+              <term>60</term>
+              <payment_amt>2114.23</payment_amt>
+              <payment_freq>MO</payment_freq>
+              <orig_receivable_amt>126853.8</orig_receivable_amt>
+              <cur_bal_amt>0</cur_bal_amt>
+              <cur_bal_pct_of_orig_receivable xsi:nil="true"/>
+              <past_due_0130_amt>0</past_due_0130_amt>
+              <past_due_3160_amt>0</past_due_3160_amt>
+              <past_due_6190_amt>0</past_due_6190_amt>
+              <past_due_91_plus_amt>0</past_due_91_plus_amt>
+              <scheduled_payments>60</scheduled_payments>
+              <past_due_0130_occurrences>0</past_due_0130_occurrences>
+              <past_due_3160_occurrences>0</past_due_3160_occurrences>
+              <past_due_6190_occurrences>0</past_due_6190_occurrences>
+              <past_due_91_plus_occurrences>0</past_due_91_plus_occurrences>
+              <days_past_due xsi:nil="true"/>
+              <avg_days_past_due>0</avg_days_past_due>
+              <max_days_past_due_low>0</max_days_past_due_low>
+              <max_days_past_due_high xsi:nil="true"/>
+              <loss_amt>0</loss_amt>
+              <renewal_date xsi:nil="true"/>
+              <closed_date>2010-07-25</closed_date>
+              <as_of_date>2006-05-31</as_of_date>
+              <start_date>2005-07-25</start_date>
+              <last_payment_date>2006-05-10</last_payment_date>
+              <next_payment_due_date xsi:nil="true"/>
+              <max_past_due_date xsi:nil="true"/>
+              <loss_status xsi:nil="true"/>
+              <contract_open_ind>N</contract_open_ind>
+              <transferred_to_other_lender>N</transferred_to_other_lender>
+              <transferred_from_other_lender>N</transferred_from_other_lender>
+              <first_bal_date>2005-07-31</first_bal_date>
+            </contract>
+            <contract>
+              <name_address>
+                <primary_name><![CDATA[VETOS TATTOO PARLOUR]]></primary_name>
+                <address_1><![CDATA[5750 BOBSTON RD]]></address_1>
+                <address_2><![CDATA[]]></address_2>
+                <city><![CDATA[NOKOMIS]]></city>
+                <state_code>TN</state_code>
+                <postal_code>01091</postal_code>
+                <telephone>5039655423</telephone>
+                <tax_id>*****4320</tax_id>
+              </name_address>
+              <contract_type>Loan</contract_type>
+              <equipment_type>TRCK</equipment_type>
+              <guarantor_code>NO</guarantor_code>
+              <term>61</term>
+              <payment_amt>1470.71</payment_amt>
+              <payment_freq>MO</payment_freq>
+              <orig_receivable_amt>89713.21</orig_receivable_amt>
+              <cur_bal_amt>0</cur_bal_amt>
+              <cur_bal_pct_of_orig_receivable xsi:nil="true"/>
+              <past_due_0130_amt>0</past_due_0130_amt>
+              <past_due_3160_amt>0</past_due_3160_amt>
+              <past_due_6190_amt>0</past_due_6190_amt>
+              <past_due_91_plus_amt>0</past_due_91_plus_amt>
+              <scheduled_payments>6</scheduled_payments>
+              <past_due_0130_occurrences>0</past_due_0130_occurrences>
+              <past_due_3160_occurrences>0</past_due_3160_occurrences>
+              <past_due_6190_occurrences>0</past_due_6190_occurrences>
+              <past_due_91_plus_occurrences>0</past_due_91_plus_occurrences>
+              <days_past_due xsi:nil="true"/>
+              <avg_days_past_due>0</avg_days_past_due>
+              <max_days_past_due_low>0</max_days_past_due_low>
+              <max_days_past_due_high xsi:nil="true"/>
+              <loss_amt>0</loss_amt>
+              <renewal_date xsi:nil="true"/>
+              <closed_date>2002-06-28</closed_date>
+              <as_of_date>2002-06-30</as_of_date>
+              <start_date>2001-12-31</start_date>
+              <last_payment_date>2002-05-14</last_payment_date>
+              <next_payment_due_date xsi:nil="true"/>
+              <max_past_due_date xsi:nil="true"/>
+              <loss_status xsi:nil="true"/>
+              <contract_open_ind>N</contract_open_ind>
+              <transferred_to_other_lender>N</transferred_to_other_lender>
+              <transferred_from_other_lender>N</transferred_from_other_lender>
+              <first_bal_date>2002-05-31</first_bal_date>
+            </contract>
+          </contracts>
+        </member_lender>
+      </member_lenders>
+      <includes_others_contracts>Y</includes_others_contracts>
+      <divergent_credit_quality>N</divergent_credit_quality>
+    </report_data>
+  </report>
+</response>
