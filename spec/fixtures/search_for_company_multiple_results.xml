@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response error_code="0" version="0320">
+  <companies>
+    <company>
+      <paynet_id>59715829</paynet_id>
+      <name><![CDATA[GOOGLE INC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[111 EIGHTH AVE FL 6]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10011</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[210 THE BLUFFS STE D]]></street>
+          <city><![CDATA[AUSTELL]]></city>
+          <state>GA</state>
+          <postal_code>30168</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>2125654924</telephone>
+      <additional_phones>
+        <phone>2125650000</phone>
+        <phone>2125650001</phone>
+        <phone>2129944862</phone>
+        <phone>4257395726</phone>
+        <phone>6502247302</phone>
+        <phone>6509999999</phone>
+      </additional_phones>
+      <match_score>98</match_score>
+    </company>
+    <company>
+      <paynet_id>160671134</paynet_id>
+      <name><![CDATA[GOOGLE CHROMEBOOK]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[41 E 11TH ST FL 11]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10003-4602</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>91</match_score>
+    </company>
+    <company>
+      <paynet_id>159935041</paynet_id>
+      <name><![CDATA[GOOGLE OFFERS]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[41 E 11TH ST FL 11]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10003-4602</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>91</match_score>
+    </company>
+    <company>
+      <paynet_id>146413849</paynet_id>
+      <name><![CDATA[GOOGLE]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[3 CORPORATE DR]]></street>
+      <city><![CDATA[CLIFTON PARK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>12065-8635</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>90</match_score>
+    </company>
+    <company>
+      <paynet_id>162957570</paynet_id>
+      <name><![CDATA[GOOGLE]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[175 BROADHOLLOW RD]]></street>
+      <city><![CDATA[HUNTINGTN STA]]></city>
+      <state_code>NY</state_code>
+      <postal_code>11747-4902</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>90</match_score>
+    </company>
+    <company>
+      <paynet_id>162957577</paynet_id>
+      <name><![CDATA[GOOGLE INFO TECH CHINA CO LTD]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[NO1 N 1 ZHONGGUANCUN EAST RD B]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10008-</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>86</match_score>
+    </company>
+    <company>
+      <paynet_id>108359958</paynet_id>
+      <name><![CDATA[REST ASSOC GOOGLE 17704]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[76 9TH AVE]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10011-4962</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2125656184</telephone>
+      <match_score>86</match_score>
+    </company>
+    <company>
+      <paynet_id>196239576</paynet_id>
+      <name><![CDATA[GIGGLE INC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[158 W. 27TH ST.]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10001</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2125613399</telephone>
+      <additional_phones>
+        <phone>2125613320</phone>
+      </additional_phones>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>149591908</paynet_id>
+      <name><![CDATA[GIGGLE INC.]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[158 W 27TH ST FL 8]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10001-6216</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2122820329</telephone>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>146641544</paynet_id>
+      <name><![CDATA[GIGLIO CO]]></name>
+      <aliases />
+      <tax_id>085426737</tax_id>
+      <street><![CDATA[505 5TH AVE RM 1200]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>99999</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2123979318</telephone>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>91411766</paynet_id>
+      <name><![CDATA[GIGLIO COMPANY INC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[250 W 57TH ST]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10107</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2036674687</telephone>
+      <additional_phones>
+        <phone>2125862400</phone>
+      </additional_phones>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>61079566</paynet_id>
+      <name><![CDATA[GIGGLE]]></name>
+      <aliases>
+        <alias><![CDATA[ORGANIC HOME INC]]></alias>
+      </aliases>
+      <tax_id />
+      <street><![CDATA[148 MADISON AVE]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10016</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[495 14TH AVE APT 9]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94118</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[120 WOOSTER ST]]></street>
+          <city><![CDATA[NEW YORK]]></city>
+          <state>NY</state>
+          <postal_code>10012</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>2123532613</telephone>
+      <additional_phones>
+        <phone>4152541127</phone>
+      </additional_phones>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>91250483</paynet_id>
+      <name><![CDATA[GIGGLES]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[115 W 40TH ST]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10018-</postal_code>
+      <country_code>USA</country_code>
+      <telephone>2128401900</telephone>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>99070015</paynet_id>
+      <name><![CDATA[GO GLOBAL]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[PO BOX 1924]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10013-0881</postal_code>
+      <country_code>USA</country_code>
+      <telephone>7182372710</telephone>
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>192999261</paynet_id>
+      <name><![CDATA[GOGLOBALTOURISM LLC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[174 W 4TH ST # 305]]></street>
+      <city><![CDATA[NEW YORK]]></city>
+      <state_code>NY</state_code>
+      <postal_code>10014-3817</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>182389436</paynet_id>
+      <name><![CDATA[GOOGLE EDI]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[PO BOX 9202]]></street>
+      <city><![CDATA[OLD BETHPAGE]]></city>
+      <state_code>NY</state_code>
+      <postal_code>11804-9002</postal_code>
+      <country_code>USA</country_code>
+      <telephone />
+      <match_score>83</match_score>
+    </company>
+    <company>
+      <paynet_id>54202728</paynet_id>
+      <name><![CDATA[GOOGLE]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[444  N MICHIGAN AVE 21ST FLOOR]]></street>
+      <city><![CDATA[CHICAGO]]></city>
+      <state_code>IL</state_code>
+      <postal_code>60611</postal_code>
+      <country_code>USA</country_code>
+      <telephone>3148408285</telephone>
+      <match_score>80</match_score>
+    </company>
+    <company>
+      <paynet_id>62933929</paynet_id>
+      <name><![CDATA[GOOGLE INC]]></name>
+      <aliases>
+        <alias><![CDATA[ADAPTIVE PATH]]></alias>
+      </aliases>
+      <tax_id />
+      <street><![CDATA[701 CANYON DR STE 120]]></street>
+      <city><![CDATA[COPPELL]]></city>
+      <state_code>TX</state_code>
+      <postal_code>75019</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[16OO AMPHITHEATRE PARKWAY]]></street>
+          <city><![CDATA[MOUNTAIN VIEW]]></city>
+          <state>CA</state>
+          <postal_code>94043</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[PO BOX 2050]]></street>
+          <city><![CDATA[MOUNTAIN VIEW]]></city>
+          <state>CA</state>
+          <postal_code>94042</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[PO BOX 2050]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94042</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[363 BRANNAN ST]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94107</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>6502535248</telephone>
+      <additional_phones>
+        <phone>4154958270</phone>
+        <phone>6502530000</phone>
+        <phone>6502535750</phone>
+      </additional_phones>
+      <match_score>80</match_score>
+    </company>
+    <company>
+      <paynet_id>204266585</paynet_id>
+      <name><![CDATA[GOOGLE, INC]]></name>
+      <aliases />
+      <tax_id />
+      <street><![CDATA[604 ARIZONA AVE.]]></street>
+      <city><![CDATA[SANTA MONICA]]></city>
+      <state_code>CA</state_code>
+      <postal_code>90401</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[PO BOX 2050]]></street>
+          <city><![CDATA[SANTA MONICA]]></city>
+          <state>CA</state>
+          <postal_code>90406</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>3103096901</telephone>
+      <match_score>80</match_score>
+    </company>
+    <company>
+      <paynet_id>205876175</paynet_id>
+      <name><![CDATA[GOOGLE, INC.]]></name>
+      <aliases>
+        <alias><![CDATA[ADAPTIVE PATH]]></alias>
+        <alias><![CDATA[BRAD STEIN]]></alias>
+        <alias><![CDATA[KEN CRAWFORD]]></alias>
+        <alias><![CDATA[MICHAEL BARNETT]]></alias>
+        <alias><![CDATA[MICHAEL TRAN]]></alias>
+      </aliases>
+      <tax_id />
+      <additional_taxids>
+        <taxid>770493581</taxid>
+      </additional_taxids>
+      <street><![CDATA[2400 BAYSHORE PARKWAY]]></street>
+      <city><![CDATA[MOUNTAIN VIEW]]></city>
+      <state_code>CA</state_code>
+      <postal_code>94043</postal_code>
+      <country_code>USA</country_code>
+      <additional_addresses>
+        <address>
+          <street><![CDATA[363 BRANNAN ST]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94107</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[PO BOX 2050]]></street>
+          <city><![CDATA[MOUNTAIN VIEW]]></city>
+          <state>CA</state>
+          <postal_code>94042</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[1600 AMPHITHEATRE PARKWAY]]></street>
+          <city><![CDATA[MOUNTAIN VIEW]]></city>
+          <state>CA</state>
+          <postal_code>94043</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[345 SPEAR ST]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94105</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[255 POTRERO AVE PO# 251955]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94103</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[255 POTRERO AVE]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94103</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[701 CANYON DR STE 120]]></street>
+          <city><![CDATA[COPPELL]]></city>
+          <state>TX</state>
+          <postal_code>75019</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[16OO AMPHITHEATRE PARKWAY]]></street>
+          <city><![CDATA[MOUNTAIN VIEW]]></city>
+          <state>CA</state>
+          <postal_code>94043</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[255 POTRERO AVE PO#276547]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94103</postal_code>
+          <country_code>USA</country_code>
+        </address>
+        <address>
+          <street><![CDATA[365 MAIN ST]]></street>
+          <city><![CDATA[SAN FRANCISCO]]></city>
+          <state>CA</state>
+          <postal_code>94105</postal_code>
+          <country_code>USA</country_code>
+        </address>
+      </additional_addresses>
+      <telephone>6503300100</telephone>
+      <additional_phones>
+        <phone>2146496288</phone>
+        <phone>4152060131</phone>
+        <phone>4154958270</phone>
+        <phone>6502144956</phone>
+        <phone>6502145702</phone>
+        <phone>6502146220</phone>
+        <phone>6502530000</phone>
+        <phone>6502533985</phone>
+        <phone>6502535248</phone>
+        <phone>6502535750</phone>
+        <phone>6506181434</phone>
+        <phone>6506181499</phone>
+        <phone>6506234000</phone>
+        <phone>6506234189</phone>
+        <phone>6506235325</phone>
+      </additional_phones>
+      <match_score>80</match_score>
+    </company>
+  </companies>
+</response>
