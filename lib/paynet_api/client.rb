@@ -3,7 +3,7 @@ module PaynetApi
     def cobrand_get_payment_history_report(params)
       request = PaynetApi::CobrandGetPaymentHistoryReport::Request.new(params)
       response = get(request)
-      PaynetApi::CobrandGetPaymentHistoryReport::Response.new(response_xml: response.body, request: request)
+      PaynetApi::CobrandGetPaymentHistoryReport::Response.new(response: response, request: request)
     end
 
     def get_payment_history_report(params)

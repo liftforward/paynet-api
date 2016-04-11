@@ -10,7 +10,6 @@ describe PaynetApi::Client do
       let(:faraday_response_double) { double("Response") }
       before do
         expect(client).to receive(:get).and_return(faraday_response_double)
-        expect(faraday_response_double).to receive(:body).and_return("<response></response>")
       end
 
       it "should make new PaynetApi::CobrandGetPaymentHistoryReport Request & Response objects with the passed in params" do
@@ -20,6 +19,9 @@ describe PaynetApi::Client do
       end
 
       it "should return a PaynetApi::CobrandGetPaymentHistoryReport::Response" do
+        allow(faraday_response_double).to receive(:body)
+        allow(faraday_response_double).to receive(:status)
+        allow(faraday_response_double).to receive(:headers).and_return({"content-type"=> "application/pdf"})
         expect(subject).to be_a(PaynetApi::CobrandGetPaymentHistoryReport::Response)
       end
     end
