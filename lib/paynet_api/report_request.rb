@@ -32,7 +32,7 @@ module PaynetApi
         constr_score: constr_score,
         master_score: master_score,
         expanded_vars: expanded_vars,
-        format: FORMAT
+        format: self.class::FORMAT
       }
     end
 
