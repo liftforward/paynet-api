@@ -1,4 +1,4 @@
-# paynet-api [ ![Codeship Status for liftforward/paynet-api](https://codeship.com/projects/6b0c0240-9794-0133-be98-668c447e66c0/status?branch=master)](https://codeship.com/projects/125854)
+# paynet-api [ ![Codeship Status for liftforward/paynet-api](https://app.codeship.com/projects/53c30c40-e46e-0135-d848-561cdda53d0e/status?branch=master)](https://app.codeship.com/projects/268812)
 
 paynet-api is a ruby gem client for the Paynet API. It's currently a work in progress and only supports limited API functionality.
 
