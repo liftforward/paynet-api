@@ -23,7 +23,6 @@ module PaynetApi
       def get request
         connection = Faraday.new request.url do |conn|
           conn.adapter Faraday.default_adapter
-          conn.proxy "http://quotaguard5236:5cb872578a51@us-east-static-01.quotaguard.com:9293"
         end
 
         connection.get
