@@ -26,7 +26,6 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
   spec.add_dependency 'builder',     '~> 3.2'
   spec.add_dependency 'hashie',      '~> 3.4'
   spec.add_dependency 'faraday',     '~> 0.14'
