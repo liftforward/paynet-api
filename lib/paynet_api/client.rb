@@ -21,7 +21,7 @@ module PaynetApi
 
     private
       def get request
-        connection = Faraday.new request.url do |conn|
+        connection = Faraday.new(request.url, { proxy: request.proxy_url } ) do |conn|
           conn.adapter Faraday.default_adapter
         end
 

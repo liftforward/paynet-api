@@ -8,7 +8,8 @@ module PaynetApi
       @options ||= {
         basic_auth_user: PaynetApi::Config.basic_auth_user,
         basic_auth_password: PaynetApi::Config.basic_auth_password,
-        base_url: PaynetApi::Config.base_url
+        base_url: PaynetApi::Config.base_url,
+        proxy_url: PaynetApi::Config.proxy_url
       }
     end
 
@@ -22,6 +23,10 @@ module PaynetApi
 
     def base_url
       options[:base_url]
+    end
+
+    def proxy_url
+      options[:proxy_url]
     end
 
     def url
