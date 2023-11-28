@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'hashie',      '~> 3.4'
   spec.add_dependency 'faraday',     '~> 0.14'
   spec.add_dependency 'nori',        '~> 2.6'
-  spec.add_dependency 'activemodel', '~> 4.2'
+  spec.add_dependency 'activemodel', '> 4.2'
 end
